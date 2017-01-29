@@ -1,0 +1,1526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<!-- 2017-01-29 Sun 11:55 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ORG MODE introduction (BIBS)!!!!</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Vaitea OPUU" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./images/org.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ORG MODE introduction (BIBS)!!!!</h1>
+<div id="table-of-contents">
+<h2>Table des matières</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org55a4903">1. Latex pour les rapports</a>
+<ul>
+<li><a href="#org2cb4c5f">1.1. les formules de maths</a></li>
+<li><a href="#orgeec1683">1.2. Algorithmes</a></li>
+</ul>
+</li>
+<li><a href="#org4aa6da8">2. commandes R</a>
+<ul>
+<li><a href="#org2fd71ce">2.1. Summary et autre calculs</a></li>
+<li><a href="#orgf732c81">2.2. Figure sous R</a>
+<ul>
+<li><a href="#orgbca0098">2.2.1. Histogramme sur le tableau <code>origin</code></a></li>
+<li><a href="#org1f4928f">2.2.2. Plot normale</a></li>
+<li><a href="#org9dce7c1">2.2.3. Autres graphiques</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org723a8a4">3. Commandes sql</a></li>
+<li><a href="#org084a3f3">4. Schéma uml</a></li>
+<li><a href="#org4f3d727">5. Programmation</a>
+<ul>
+<li><a href="#orgbe2efa6">5.1. Python</a>
+<ul>
+<li><a href="#orga685bf1">5.1.1. Fonction factorielle</a></li>
+<li><a href="#org575db5a">5.1.2. Autre</a></li>
+</ul>
+</li>
+<li><a href="#org9d93e72">5.2. Haskell</a></li>
+<li><a href="#org5b2d69f">5.3. C</a></li>
+<li><a href="#orge5db9a4">5.4. Java</a></li>
+<li><a href="#orgb7d75d0">5.5. Shell</a></li>
+<li><a href="#orgaf9fb4a">5.6. Et pas mal d'autre langages &#x2026;</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="org57888a7" class="figure">
+<p><img src="./images/iu.png" alt="iu.png" />
+</p>
+</div>
+
+<div id="outline-container-org55a4903" class="outline-2">
+<h2 id="org55a4903"><span class="section-number-2">1</span> Latex pour les rapports</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-org2cb4c5f" class="outline-3">
+<h3 id="org2cb4c5f"><span class="section-number-3">1.1</span> les formules de maths</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Produit des densités et somme des logarithme.
+</p>
+
+\begin{split}
+    \mathscr{L} &= \prod_i f(x_i)\\
+    log(\mathscr{L}) &= \sum_i log(f(x_i))\\
+    X &\sim \mathcal{N}_{0,1}
+\end{split}
+</div>
+</div>
+
+<div id="outline-container-orgeec1683" class="outline-3">
+<h3 id="orgeec1683"><span class="section-number-3">1.2</span> Algorithmes</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+<pre class="src src-latex"><span style="color: #4f97d7; font-weight: bold;">\begin</span>{<span style="color: #bc6ec5; font-weight: bold;">algorithm</span>}[H]
+  <span style="color: #d3d3d3;">\Fn</span>{gillepsie}{}{
+    <span style="color: #d3d3d3;">\KwIn</span>{<span style="color: #d3d3d3;">\Protein</span>{} Recepteur, <span style="color: #d3d3d3;">\Protein</span>{} Ligand, <span style="color: #d3d3d3;">\Real</span>{} score,  <span style="color: #d3d3d3;">\Entier</span>{} tau}
+    <span style="color: #d3d3d3;">\KwOut</span>{<span style="color: #d3d3d3;">\Protein</span>{} Ligand}<span style="color: #ff0000; font-weight: bold;">\\</span>
+
+    <span style="color: #d3d3d3;">\tcp*</span>[h]{On calcul si il existe un bon mouvement}<span style="color: #ff0000; font-weight: bold;">\\</span>
+    new-ligand, new-score <span style="color: #deb887;">$</span><span style="color: #deb887;">\leftarrow</span><span style="color: #deb887;">$</span> simulation(r&#233;cepteur, ligand, score)<span style="color: #ff0000; font-weight: bold;">\\</span>
+
+    <span style="color: #d3d3d3;">\uIf</span>(<span style="color: #d3d3d3;">\tcp*</span>[h]{si on trouve un mouvement favorable}){new-socre &lt; score}{
+      <span style="color: #d3d3d3;">\Return</span>{gillepsie(recepteur, new-ligand, new-score, tau)}
+    }
+
+    <span style="color: #d3d3d3;">\tcp*</span>[h]{On va diviser la distance entre les deux par <span style="color: #4f97d7; font-weight: bold;">\textit</span>{<span style="color: #4f97d7; font-style: italic;">tau</span>}}<span style="color: #ff0000; font-weight: bold;">\\</span>
+    new-ligand <span style="color: #deb887;">$</span><span style="color: #deb887;">\leftarrow</span><span style="color: #deb887;">$</span> rapproche(ligand, tau)<span style="color: #ff0000; font-weight: bold;">\\</span>
+    new-score <span style="color: #deb887;">$</span><span style="color: #deb887;">\leftarrow</span><span style="color: #deb887;">$</span> score(r&#233;cepteur, ligand)<span style="color: #ff0000; font-weight: bold;">\\</span>
+
+    <span style="color: #d3d3d3;">\uElseIf</span>(<span style="color: #d3d3d3;">\tcp*</span>[h]{aucun mouvement favorable}){tau &lt; 15 et
+      collision(r&#233;cepteur, ligand)}{
+      <span style="color: #d3d3d3;">\tcp*</span>[h]{collision renvoi false si collision entre r&#233;cepteur et ligand}
+      <span style="color: #d3d3d3;">\Return</span>{gillepsie(r&#233;cepteur, new-ligand, new-score, tau)}
+    }
+    <span style="color: #d3d3d3;">\uElseIf</span>(<span style="color: #d3d3d3;">\tcp*</span>[h]{mouvement trop grand}){tau &lt; 15}{
+      <span style="color: #d3d3d3;">\tcp*</span>[h]{diminution du mouvement}<span style="color: #ff0000; font-weight: bold;">\\</span>
+      <span style="color: #d3d3d3;">\Return</span>{gillepsie(recepteur, new-ligand, new-score, tau+1)}<span style="color: #ff0000; font-weight: bold;">\\</span>
+    }
+    <span style="color: #d3d3d3;">\Return</span>{ligand}
+  }
+  <span style="color: #4f97d7; font-weight: bold;">\caption</span>{<span style="color: #ce537a; font-weight: bold;">Gillespie</span>}
+<span style="color: #4f97d7; font-weight: bold;">\end</span>{<span style="color: #bc6ec5; font-weight: bold;">algorithm</span>}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org4aa6da8" class="outline-2">
+<h2 id="org4aa6da8"><span class="section-number-2">2</span> commandes R</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-org2fd71ce" class="outline-3">
+<h3 id="org2fd71ce"><span class="section-number-3">2.1</span> Summary et autre calculs</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Sortie du script R en <code>verbatim</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-R">dat <span style="color: #a45bad;">&lt;-</span> read.table<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"./data/cafe.dat"</span>, header = T<span style="color: #4f97d7;">)</span>
+summary<span style="color: #4f97d7;">(</span>dat<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<pre class="example" id="fig:verba">
+   Origine          Perte           Lumin             xa
+Min.   :1.000   Min.   :11.87   Min.   :15.06   Min.   : 5.730
+1st Qu.:1.000   1st Qu.:14.72   1st Qu.:19.78   1st Qu.: 8.620
+Median :3.000   Median :16.41   Median :23.41   Median :10.010
+Mean   :2.974   Mean   :16.55   Mean   :24.03   Mean   : 9.963
+3rd Qu.:4.000   3rd Qu.:18.16   3rd Qu.:27.51   3rd Qu.:11.490
+Max.   :7.000   Max.   :22.81   Max.   :41.15   Max.   :14.520
+      xb              xy              xgn
+Min.   : 6.33   Min.   : 1.920   Min.   :1.660
+1st Qu.:12.06   1st Qu.: 2.890   1st Qu.:2.420
+Median :16.29   Median : 3.790   Median :3.140
+Mean   :16.76   Mean   : 4.249   Mean   :3.464
+3rd Qu.:20.89   3rd Qu.: 5.060   3rd Qu.:4.130
+Max.   :30.57   Max.   :11.970   Max.   :9.120
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">head<span style="color: #4f97d7;">(</span>dat<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<table id="orgddb9aab" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Origine</th>
+<th scope="col" class="org-right">Perte</th>
+<th scope="col" class="org-right">Lumin</th>
+<th scope="col" class="org-right">xa</th>
+<th scope="col" class="org-right">xb</th>
+<th scope="col" class="org-right">xy</th>
+<th scope="col" class="org-right">xgn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">12.24</td>
+<td class="org-right">29.62</td>
+<td class="org-right">12.41</td>
+<td class="org-right">23.66</td>
+<td class="org-right">6.08</td>
+<td class="org-right">4.61</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">13.2</td>
+<td class="org-right">27.51</td>
+<td class="org-right">12.16</td>
+<td class="org-right">21.72</td>
+<td class="org-right">5.28</td>
+<td class="org-right">3.96</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">13.52</td>
+<td class="org-right">26.54</td>
+<td class="org-right">12.05</td>
+<td class="org-right">21.03</td>
+<td class="org-right">4.93</td>
+<td class="org-right">3.74</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">13.52</td>
+<td class="org-right">26.11</td>
+<td class="org-right">11.69</td>
+<td class="org-right">20.09</td>
+<td class="org-right">4.79</td>
+<td class="org-right">3.63</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">13.68</td>
+<td class="org-right">25.59</td>
+<td class="org-right">11.67</td>
+<td class="org-right">19.75</td>
+<td class="org-right">4.61</td>
+<td class="org-right">3.54</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">13.81</td>
+<td class="org-right">25</td>
+<td class="org-right">11.38</td>
+<td class="org-right">19.11</td>
+<td class="org-right">4.41</td>
+<td class="org-right">3.36</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-orgf732c81" class="outline-3">
+<h3 id="orgf732c81"><span class="section-number-3">2.2</span> Figure sous R</h3>
+<div class="outline-text-3" id="text-2-2">
+</div><div id="outline-container-orgbca0098" class="outline-4">
+<h4 id="orgbca0098"><span class="section-number-4">2.2.1</span> Histogramme sur le tableau <code>origin</code></h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+On peut prendre en entrée pour un script <code>R</code>, un tableau dans le fichier <code>org</code>.
+C'est pas un peu cool ça ?!
+</p>
+<div class="org-src-container">
+<pre class="src src-R">hist<span style="color: #4f97d7;">(</span>origin$Lumin, main = <span style="color: #2d9574;">"histogramme Lumin"</span>, xlab = <span style="color: #2d9574;">"lumin"</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+
+<div id="orgd0fb39e" class="figure">
+<p><img src="images/hist.png" alt="hist.png" />
+</p>
+<p><span class="figure-number">Figure&nbsp;2&nbsp;: </span>hist</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org1f4928f" class="outline-4">
+<h4 id="org1f4928f"><span class="section-number-4">2.2.2</span> Plot normale</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+Et evidement que l'on peut faire communiquer les blocs de codes entre eux. Pas
+besoin de déclarer plusieurs fois le tableau <code>dat</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-R">plot<span style="color: #4f97d7;">(</span>dat$Lumin, dat$Perte, main = <span style="color: #2d9574;">"lumin vs perte"</span>, xlab = <span style="color: #2d9574;">"lumin"</span>, ylab = <span style="color: #2d9574;">"perte"</span><span style="color: #4f97d7;">)</span>
+lines<span style="color: #4f97d7;">(</span>lowess<span style="color: #bc6ec5;">(</span>dat$Perte ~ dat$Lumin<span style="color: #bc6ec5;">)</span>, col = <span style="color: #2d9574;">"red"</span>, lwd = <span style="color: #a45bad;">2</span>, xlim = c<span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">0</span>, <span style="color: #a45bad;">50</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+
+<div id="orgb16326b" class="figure">
+<p><img src="images/plot.png" alt="plot.png" />
+</p>
+<p><span class="figure-number">Figure&nbsp;3&nbsp;: </span>plot</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9dce7c1" class="outline-4">
+<h4 id="org9dce7c1"><span class="section-number-4">2.2.3</span> Autres graphiques</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<div class="org-src-container">
+<pre class="src src-R">hist<span style="color: #4f97d7;">(</span>dat$Perte, prob = T, main = <span style="color: #2d9574;">"lumin"</span>, xlab = <span style="color: #2d9574;">"lumin"</span>, ylab = <span style="color: #2d9574;">"frequency"</span><span style="color: #4f97d7;">)</span>
+lines<span style="color: #4f97d7;">(</span>density<span style="color: #bc6ec5;">(</span>dat$Perte<span style="color: #bc6ec5;">)</span>, col = <span style="color: #2d9574;">"red"</span>, lwd = <span style="color: #a45bad;">2</span>, xlim = c<span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">0</span>, <span style="color: #a45bad;">50</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+
+<div id="orge8fa80f" class="figure">
+<p><img src="images/hist2.png" alt="hist2.png" />
+</p>
+<p><span class="figure-number">Figure&nbsp;4&nbsp;: </span>hist2</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-R">heatmap<span style="color: #4f97d7;">(</span>cov<span style="color: #bc6ec5;">(</span>dat<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+
+<div id="org3515dce" class="figure">
+<p><img src="images/heat.png" alt="heat.png" />
+</p>
+<p><span class="figure-number">Figure&nbsp;5&nbsp;: </span>heatmap</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org723a8a4" class="outline-2">
+<h2 id="org723a8a4"><span class="section-number-2">3</span> Commandes sql</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Petit <i>exemple</i> de <span class="underline">requête</span> sql sur une base de données en <code>local</code>. Il suffit
+de lui fournir les informations suivantes:
+</p>
+<pre class="example">
+#+name: test_request
+#+header: :engine postgresql
+#+header: :dbhost localhost
+#+header: :dbuser postgres
+#+header: :dbpassword password
+#+header: :database postgres
+</pre>
+<div class="org-src-container">
+<pre class="src src-sql" id="orgbaaeab7"><span style="color: #4f97d7; font-weight: bold;">select</span> * <span style="color: #4f97d7; font-weight: bold;">from</span> projet <span style="color: #4f97d7; font-weight: bold;">limit</span> <span style="color: #a45bad;">10</span>
+</pre>
+</div>
+<table id="orgd40904f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">id</th>
+<th scope="col" class="org-left">project.type</th>
+<th scope="col" class="org-left">project.status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">ChIP-Sequencing</td>
+<td class="org-left">incomplete</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">Chloroplast</td>
+<td class="org-left">Permanent Draft</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">Chloroplast</td>
+<td class="org-left">incomplete</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">Exome</td>
+<td class="org-left">incomplete</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-left">Genome fragments</td>
+<td class="org-left">complete</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-left">Genome fragments</td>
+<td class="org-left">incomplete</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-left">Metagenome</td>
+<td class="org-left">incomplete</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-left">Methylation</td>
+<td class="org-left">incomplete</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-left">Methylation</td>
+<td class="org-left">targeted</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-left">Mitochondria</td>
+<td class="org-left">Permanent Draft</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-sql" id="org0a90f59">EXPLAIN ANALYSE <span style="color: #4f97d7; font-weight: bold;">select</span> * <span style="color: #4f97d7; font-weight: bold;">from</span> projet <span style="color: #4f97d7; font-weight: bold;">limit</span> <span style="color: #a45bad;">10</span>
+</pre>
+</div>
+<table id="orga8a76c5" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">QUERY PLAN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Limit  (cost=0.00..0.41 rows=10 width=72) (actual time=0.021..0.026 rows=10 loops=1)</td>
+</tr>
+
+<tr>
+<td class="org-left">-&gt;  Seq Scan on projet  (cost=0.00..1.32 rows=32 width=72) (actual time=0.020..0.024 rows=10 loops=1)</td>
+</tr>
+
+<tr>
+<td class="org-left">Planning time: 0.665 ms</td>
+</tr>
+
+<tr>
+<td class="org-left">Execution time: 0.077 ms</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org084a3f3" class="outline-2">
+<h2 id="org084a3f3"><span class="section-number-2">4</span> Schéma uml</h2>
+<div class="outline-text-2" id="text-4">
+
+<div id="org6adf6a3" class="figure">
+<p><img src="images/uml.png" alt="uml.png" />
+</p>
+<p><span class="figure-number">Figure&nbsp;6&nbsp;: </span>schéma uml</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4f3d727" class="outline-2">
+<h2 id="org4f3d727"><span class="section-number-2">5</span> Programmation</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-orgbe2efa6" class="outline-3">
+<h3 id="orgbe2efa6"><span class="section-number-3">5.1</span> Python</h3>
+<div class="outline-text-3" id="text-5-1">
+
+<div id="orga520b0c" class="figure">
+<p><img src="./images/python-logo.png" alt="python-logo.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga685bf1" class="outline-4">
+<h4 id="orga685bf1"><span class="section-number-4">5.1.1</span> Fonction factorielle</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">factorial</span><span style="color: #4f97d7;">(</span>n<span style="color: #4f97d7;">)</span>:
+    <span style="color: #4f97d7; font-weight: bold;">if</span> n == <span style="color: #a45bad;">1</span>:
+        <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">1</span>
+    <span style="color: #4f97d7; font-weight: bold;">else</span>:
+        <span style="color: #4f97d7; font-weight: bold;">return</span> factorial<span style="color: #4f97d7;">(</span>n-<span style="color: #a45bad;">1</span><span style="color: #4f97d7;">)</span> * n
+
+factorial<span style="color: #4f97d7;">(</span><span style="color: #a45bad;">10</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+<p>
+3628800
+</p>
+</div>
+</div>
+
+<div id="outline-container-org575db5a" class="outline-4">
+<h4 id="org575db5a"><span class="section-number-4">5.1.2</span> Autre</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<p>
+Comme pour <code>R</code>, les blocs de codes peuvent aussi communiquer.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">affiche</span><span style="color: #4f97d7;">(</span>n<span style="color: #4f97d7;">)</span>:
+    <span style="color: #7590db;">gen</span> = <span style="color: #4f97d7;">(</span>i <span style="color: #4f97d7; font-weight: bold;">for</span> i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">range</span><span style="color: #bc6ec5;">(</span>factorial<span style="color: #2d9574;">(</span>n<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #4f97d7;">[</span>i <span style="color: #4f97d7; font-weight: bold;">for</span> i <span style="color: #4f97d7; font-weight: bold;">in</span> gen<span style="color: #4f97d7;">]</span>
+
+affiche<span style="color: #4f97d7;">(</span><span style="color: #a45bad;">3</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+<p>
+[0, 1, 2, 3, 4, 5]
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">affiche_table</span><span style="color: #4f97d7;">(</span>table<span style="color: #4f97d7;">)</span>:
+    <span style="color: #7590db;">result</span> = np.
+    <span style="color: #4f97d7; font-weight: bold;">for</span> t <span style="color: #4f97d7; font-weight: bold;">in</span> table:
+        result.append<span style="color: #4f97d7;">(</span>t<span style="color: #4f97d7;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">return</span> result
+
+<span style="color: #4f97d7;">map</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">lambda</span> x: <span style="color: #4f97d7;">round</span><span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">4</span>+x<span style="color: #bc6ec5;">)</span>, affiche_table<span style="color: #bc6ec5;">(</span>origin<span style="color: #bc6ec5;">)[</span><span style="color: #a45bad;">0</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9d93e72" class="outline-3">
+<h3 id="org9d93e72"><span class="section-number-3">5.2</span> Haskell</h3>
+<div class="outline-text-3" id="text-5-2">
+
+<div id="org9ae0590" class="figure">
+<p><img src="./images/haskell.png" alt="haskell.png" />
+</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">main</span> <span style="color: #7590db;">::</span> <span style="color: #ce537a; font-weight: bold;">IO</span> <span style="color: #4f97d7; font-weight: bold;">()</span>
+<span style="color: #bc6ec5; font-weight: bold;">main</span> <span style="color: #7590db;">=</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
+    fibo <span style="color: #a45bad;">10</span>
+
+<span style="color: #bc6ec5; font-weight: bold;">fibos</span> <span style="color: #7590db;">=</span> <span style="color: #a45bad;">0</span> <span style="color: #ce537a; font-weight: bold;">:</span> <span style="color: #a45bad;">1</span> <span style="color: #ce537a; font-weight: bold;">:</span> <span style="color: #4f97d7;">[</span> <span style="color: #bc6ec5;">(</span><span style="color: #7590db;">+</span><span style="color: #bc6ec5;">)</span> x y <span style="color: #7590db;">|</span> <span style="color: #bc6ec5;">(</span>x, y<span style="color: #bc6ec5;">)</span> <span style="color: #7590db;">&lt;-</span> <span style="color: #bc6ec5;">(</span>zip fibos <span style="color: #2d9574;">(</span>tail fibos<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">]</span>
+<span style="color: #bc6ec5; font-weight: bold;">fibo</span> n <span style="color: #7590db;">=</span> fibos <span style="color: #7590db;">!!</span> n
+</pre>
+</div>
+<p>
+55
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5b2d69f" class="outline-3">
+<h3 id="org5b2d69f"><span class="section-number-3">5.3</span> C</h3>
+<div class="outline-text-3" id="text-5-3">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">argc</span>, <span style="color: #ce537a; font-weight: bold;">char</span> *<span style="color: #7590db;">argv</span><span style="color: #bc6ec5;">[]</span><span style="color: #4f97d7;">)</span> <span style="color: #4f97d7;">{</span>
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">N</span> = <span style="color: #a45bad;">10</span>;
+  <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>;
+  <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #bc6ec5;">(</span>i = <span style="color: #a45bad;">0</span>; i &lt; N; i++<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+    printf<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"hello %d\n"</span>, i<span style="color: #2d9574;">)</span>;
+  <span style="color: #bc6ec5;">}</span>
+  <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">0</span>;
+<span style="color: #4f97d7;">}</span>
+</pre>
+</div>
+
+<table id="orga5181a0" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">hello</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">hello</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">hello</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">hello</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-left">hello</td>
+<td class="org-right">4</td>
+</tr>
+
+<tr>
+<td class="org-left">hello</td>
+<td class="org-right">5</td>
+</tr>
+
+<tr>
+<td class="org-left">hello</td>
+<td class="org-right">6</td>
+</tr>
+
+<tr>
+<td class="org-left">hello</td>
+<td class="org-right">7</td>
+</tr>
+
+<tr>
+<td class="org-left">hello</td>
+<td class="org-right">8</td>
+</tr>
+
+<tr>
+<td class="org-left">hello</td>
+<td class="org-right">9</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orge5db9a4" class="outline-3">
+<h3 id="orge5db9a4"><span class="section-number-3">5.4</span> Java</h3>
+<div class="outline-text-3" id="text-5-4">
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">Hello</span> <span style="color: #4f97d7;">{</span>
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">int</span><span style="color: #bc6ec5;">[][]</span> <span style="color: #bc6ec5; font-weight: bold;">pascal</span><span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">n</span><span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+        <span style="color: #ce537a; font-weight: bold;">int</span><span style="color: #2d9574;">[][]</span> <span style="color: #7590db;">score</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">int</span><span style="color: #2d9574;">[</span>n<span style="color: #2d9574;">][</span>n<span style="color: #2d9574;">]</span>;
+        <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">p</span>;
+        <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #2d9574;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span> = <span style="color: #a45bad;">1</span>; i &lt; <span style="color: #ce537a; font-weight: bold;">n</span>; i++<span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+            score<span style="color: #67b11d;">[</span>i<span style="color: #67b11d;">][</span><span style="color: #a45bad;">0</span><span style="color: #67b11d;">]</span> = <span style="color: #a45bad;">1</span>;
+            <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #67b11d;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">j</span> = <span style="color: #a45bad;">1</span>; j &lt; <span style="color: #ce537a; font-weight: bold;">i</span>; j++<span style="color: #67b11d;">)</span> <span style="color: #67b11d;">{</span>
+                score<span style="color: #b1951d;">[</span>i<span style="color: #b1951d;">][</span>j<span style="color: #b1951d;">]</span> = score<span style="color: #b1951d;">[</span>i-<span style="color: #a45bad;">1</span><span style="color: #b1951d;">][</span>j-<span style="color: #a45bad;">1</span><span style="color: #b1951d;">]</span> + score<span style="color: #b1951d;">[</span>i-<span style="color: #a45bad;">1</span><span style="color: #b1951d;">][</span>j<span style="color: #b1951d;">]</span>;
+            <span style="color: #67b11d;">}</span>
+        <span style="color: #2d9574;">}</span>
+        <span style="color: #4f97d7; font-weight: bold;">return</span><span style="color: #2d9574;">(</span>score<span style="color: #2d9574;">)</span>;
+    <span style="color: #bc6ec5;">}</span>
+
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">affiche</span><span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">int</span><span style="color: #2d9574;">[][]</span> <span style="color: #7590db;">mat</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">N</span><span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+        <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #2d9574;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span> = <span style="color: #a45bad;">0</span>; i &lt; <span style="color: #ce537a; font-weight: bold;">N</span>; i++<span style="color: #2d9574;">)</span> <span style="color: #2d9574;">{</span>
+            <span style="color: #4f97d7; font-weight: bold;">for</span><span style="color: #67b11d;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">j</span> = <span style="color: #a45bad;">0</span>; j &lt; <span style="color: #ce537a; font-weight: bold;">N</span>; j++<span style="color: #67b11d;">)</span> <span style="color: #67b11d;">{</span>
+                System.out.print<span style="color: #b1951d;">(</span>mat<span style="color: #4f97d7;">[</span>i<span style="color: #4f97d7;">][</span>j<span style="color: #4f97d7;">]</span>+<span style="color: #2d9574;">"|"</span><span style="color: #b1951d;">)</span>;
+            <span style="color: #67b11d;">}</span>
+            System.out.println<span style="color: #67b11d;">(</span><span style="color: #2d9574;">""</span><span style="color: #67b11d;">)</span>;
+        <span style="color: #2d9574;">}</span>
+    <span style="color: #bc6ec5;">}</span>
+    <span style="color: #4f97d7; font-weight: bold;">public</span> <span style="color: #4f97d7; font-weight: bold;">static</span> <span style="color: #ce537a; font-weight: bold;">void</span> <span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">String</span><span style="color: #2d9574;">[]</span> <span style="color: #7590db;">args</span><span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+        <span style="color: #ce537a; font-weight: bold;">Hello</span> <span style="color: #7590db;">c</span> = <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Hello</span><span style="color: #2d9574;">()</span>;
+        <span style="color: #ce537a; font-weight: bold;">int</span><span style="color: #2d9574;">[][]</span> <span style="color: #7590db;">p</span> = c.pascal<span style="color: #2d9574;">(</span>taille<span style="color: #2d9574;">)</span>;
+        c.affiche<span style="color: #2d9574;">(</span>p, taille<span style="color: #2d9574;">)</span>;
+    <span style="color: #bc6ec5;">}</span>
+<span style="color: #4f97d7;">}</span>
+</pre>
+</div>
+<table id="org4da4f0e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">4</td>
+<td class="org-right">6</td>
+<td class="org-right">4</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">5</td>
+<td class="org-right">10</td>
+<td class="org-right">10</td>
+<td class="org-right">5</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">6</td>
+<td class="org-right">15</td>
+<td class="org-right">20</td>
+<td class="org-right">15</td>
+<td class="org-right">6</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">7</td>
+<td class="org-right">21</td>
+<td class="org-right">35</td>
+<td class="org-right">35</td>
+<td class="org-right">21</td>
+<td class="org-right">7</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">8</td>
+<td class="org-right">28</td>
+<td class="org-right">56</td>
+<td class="org-right">70</td>
+<td class="org-right">56</td>
+<td class="org-right">28</td>
+<td class="org-right">8</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgb7d75d0" class="outline-3">
+<h3 id="orgb7d75d0"><span class="section-number-3">5.5</span> Shell</h3>
+<div class="outline-text-3" id="text-5-5">
+<div class="org-src-container">
+<pre class="src src-sh">ls -lah .
+</pre>
+</div>
+<table id="org6d95d9c" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">total</td>
+<td class="org-right">56</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">drwxr-xr-x</td>
+<td class="org-right">10</td>
+<td class="org-left">vaiteaopuu</td>
+<td class="org-left">staff</td>
+<td class="org-left">340B</td>
+<td class="org-right">29</td>
+<td class="org-left">jan</td>
+<td class="org-right">11:20</td>
+<td class="org-left">0</td>
+</tr>
+
+<tr>
+<td class="org-left">drwxr-xr-x</td>
+<td class="org-right">7</td>
+<td class="org-left">vaiteaopuu</td>
+<td class="org-left">staff</td>
+<td class="org-left">238B</td>
+<td class="org-right">28</td>
+<td class="org-left">jan</td>
+<td class="org-right">15:28</td>
+<td class="org-left">..</td>
+</tr>
+
+<tr>
+<td class="org-left">-rw-r&#x2013;r--</td>
+<td class="org-right">1</td>
+<td class="org-left">vaiteaopuu</td>
+<td class="org-left">staff</td>
+<td class="org-left">1,0K</td>
+<td class="org-right">29</td>
+<td class="org-left">jan</td>
+<td class="org-right">10:17</td>
+<td class="org-left">Hello.class</td>
+</tr>
+
+<tr>
+<td class="org-left">-rw-r&#x2013;r--</td>
+<td class="org-right">1</td>
+<td class="org-left">vaiteaopuu</td>
+<td class="org-left">staff</td>
+<td class="org-left">727B</td>
+<td class="org-right">29</td>
+<td class="org-left">jan</td>
+<td class="org-right">10:18</td>
+<td class="org-left">Hello.java</td>
+</tr>
+
+<tr>
+<td class="org-left">drwxr-xr-x</td>
+<td class="org-right">3</td>
+<td class="org-left">vaiteaopuu</td>
+<td class="org-left">staff</td>
+<td class="org-left">102B</td>
+<td class="org-right">28</td>
+<td class="org-left">jan</td>
+<td class="org-right">17:36</td>
+<td class="org-left">auto</td>
+</tr>
+
+<tr>
+<td class="org-left">drwxr-xr-x</td>
+<td class="org-right">3</td>
+<td class="org-left">vaiteaopuu</td>
+<td class="org-left">staff</td>
+<td class="org-left">102B</td>
+<td class="org-right">29</td>
+<td class="org-left">jan</td>
+<td class="org-right">09:34</td>
+<td class="org-left">css</td>
+</tr>
+
+<tr>
+<td class="org-left">drwxr-xr-x</td>
+<td class="org-right">3</td>
+<td class="org-left">vaiteaopuu</td>
+<td class="org-left">staff</td>
+<td class="org-left">102B</td>
+<td class="org-right">28</td>
+<td class="org-left">jan</td>
+<td class="org-right">16:23</td>
+<td class="org-left">data</td>
+</tr>
+
+<tr>
+<td class="org-left">drwxr-xr-x</td>
+<td class="org-right">16</td>
+<td class="org-left">vaiteaopuu</td>
+<td class="org-left">staff</td>
+<td class="org-left">544B</td>
+<td class="org-right">29</td>
+<td class="org-left">jan</td>
+<td class="org-right">11:11</td>
+<td class="org-left">images</td>
+</tr>
+
+<tr>
+<td class="org-left">-rw-r&#x2013;r--</td>
+<td class="org-right">1</td>
+<td class="org-left">vaiteaopuu</td>
+<td class="org-left">staff</td>
+<td class="org-left">13K</td>
+<td class="org-right">29</td>
+<td class="org-left">jan</td>
+<td class="org-right">11:20</td>
+<td class="org-left">rapport.org</td>
+</tr>
+
+<tr>
+<td class="org-left">-rw-r&#x2013;r--</td>
+<td class="org-right">1</td>
+<td class="org-left">vaiteaopuu</td>
+<td class="org-left">staff</td>
+<td class="org-left">474B</td>
+<td class="org-right">29</td>
+<td class="org-left">jan</td>
+<td class="org-right">10:53</td>
+<td class="org-left">test.hs</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-sh">cowsay ORG IS GREAT
+</pre>
+</div>
+
+<pre class="example" id="fig:cow">
+ ______________
+&lt; ORG IS GREAT &gt;
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-sh">cowsay <span style="color: #2d9574;">"$(</span><span style="color: #fa8072;">python</span><span style="color: #2d9574;"> ../markov/markov.py ../song2 3 2)"</span>
+</pre>
+</div>
+
+<pre class="example" id="fig:markow">
+ ________________________________________
+/ l'amour sera loi                       \
+|                                        |
+| ni facile, fais moi bête comme m'a    |
+| convoitisé                            |
+|                                        |
+| les feuilles                           |
+|                                        |
+| qu'à : "Méfie toi de ton de l'air du |
+| poêle                                 |
+|                                        |
+| façon connu                           |
+|                                        |
+\ ne mangions qu'un jour                 /
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgaf9fb4a" class="outline-3">
+<h3 id="orgaf9fb4a"><span class="section-number-3">5.6</span> Et pas mal d'autre langages &#x2026;</h3>
+<div class="outline-text-3" id="text-5-6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Language</th>
+<th scope="col" class="org-left">Identifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Asymptote</td>
+<td class="org-left">asymptote</td>
+</tr>
+
+<tr>
+<td class="org-left">C</td>
+<td class="org-left">C</td>
+</tr>
+
+<tr>
+<td class="org-left">Clojure</td>
+<td class="org-left">clojure</td>
+</tr>
+
+<tr>
+<td class="org-left">D</td>
+<td class="org-left">d</td>
+</tr>
+
+<tr>
+<td class="org-left">Graphviz</td>
+<td class="org-left">dot</td>
+</tr>
+
+<tr>
+<td class="org-left">Emacs Lisp</td>
+<td class="org-left">emacs-lisp</td>
+</tr>
+
+<tr>
+<td class="org-left">gnuplot</td>
+<td class="org-left">gnuplot</td>
+</tr>
+
+<tr>
+<td class="org-left">Java</td>
+<td class="org-left">java</td>
+</tr>
+
+<tr>
+<td class="org-left">LaTeX</td>
+<td class="org-left">latex</td>
+</tr>
+
+<tr>
+<td class="org-left">Lisp</td>
+<td class="org-left">lisp</td>
+</tr>
+
+<tr>
+<td class="org-left">Lua</td>
+<td class="org-left">lua</td>
+</tr>
+
+<tr>
+<td class="org-left">Mscgen</td>
+<td class="org-left">mscgen</td>
+</tr>
+
+<tr>
+<td class="org-left">Octave</td>
+<td class="org-left">octave</td>
+</tr>
+
+<tr>
+<td class="org-left">Oz</td>
+<td class="org-left">oz</td>
+</tr>
+
+<tr>
+<td class="org-left">Plantuml</td>
+<td class="org-left">plantuml</td>
+</tr>
+
+<tr>
+<td class="org-left">Python</td>
+<td class="org-left">python</td>
+</tr>
+
+<tr>
+<td class="org-left">Ruby</td>
+<td class="org-left">ruby</td>
+</tr>
+
+<tr>
+<td class="org-left">Scheme</td>
+<td class="org-left">scheme</td>
+</tr>
+
+<tr>
+<td class="org-left">Sed</td>
+<td class="org-left">sed</td>
+</tr>
+
+<tr>
+<td class="org-left">SQL</td>
+<td class="org-left">sql</td>
+</tr>
+
+<tr>
+<td class="org-left">Awk</td>
+<td class="org-left">awk</td>
+</tr>
+
+<tr>
+<td class="org-left">C++</td>
+<td class="org-left">C++</td>
+</tr>
+
+<tr>
+<td class="org-left">CSS</td>
+<td class="org-left">css</td>
+</tr>
+
+<tr>
+<td class="org-left">ditaa</td>
+<td class="org-left">ditaa</td>
+</tr>
+
+<tr>
+<td class="org-left">Emacs Calc</td>
+<td class="org-left">calc</td>
+</tr>
+
+<tr>
+<td class="org-left">Fortran</td>
+<td class="org-left">fortran</td>
+</tr>
+
+<tr>
+<td class="org-left">Haskell</td>
+<td class="org-left">haskell</td>
+</tr>
+
+<tr>
+<td class="org-left">Javascript</td>
+<td class="org-left">js</td>
+</tr>
+
+<tr>
+<td class="org-left">Ledger</td>
+<td class="org-left">ledger</td>
+</tr>
+
+<tr>
+<td class="org-left">Lilypond</td>
+<td class="org-left">lilypond</td>
+</tr>
+
+<tr>
+<td class="org-left">MATLAB</td>
+<td class="org-left">matlab</td>
+</tr>
+
+<tr>
+<td class="org-left">Objective Caml</td>
+<td class="org-left">ocaml</td>
+</tr>
+
+<tr>
+<td class="org-left">Org mode</td>
+<td class="org-left">org</td>
+</tr>
+
+<tr>
+<td class="org-left">Perl</td>
+<td class="org-left">perl</td>
+</tr>
+
+<tr>
+<td class="org-left">Processing.js</td>
+<td class="org-left">processing</td>
+</tr>
+
+<tr>
+<td class="org-left">R</td>
+<td class="org-left">R</td>
+</tr>
+
+<tr>
+<td class="org-left">Sass</td>
+<td class="org-left">sass</td>
+</tr>
+
+<tr>
+<td class="org-left">GNU Screen</td>
+<td class="org-left">screen</td>
+</tr>
+
+<tr>
+<td class="org-left">shell</td>
+<td class="org-left">sh</td>
+</tr>
+
+<tr>
+<td class="org-left">SQLite</td>
+<td class="org-left">sqlite</td>
+</tr>
+</tbody>
+</table>
+<p>
+<br  />
+</p>
+
+
+<p>
+<a href="http://spacemacs.org">ile:<object type="image/svg+xml" data="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object></a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Auteur: Vaitea OPUU</p>
+<p class="date">Created: 2017-01-29 Sun 11:55</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

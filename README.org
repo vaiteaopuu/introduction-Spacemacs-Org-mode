@@ -1,0 +1,11 @@
+* BIBS introduction to spacemacs and Org-mode
+
+** Installation
+
+[[https://github.com/syl20bnr/spacemacs]]
+
+** Org mode presentation
+
+#+CAPTION: ORG
+#+NAME: fig:org
+[[./images/iu.png]]

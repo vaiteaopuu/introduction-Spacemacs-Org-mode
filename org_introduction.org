@@ -1,0 +1,544 @@
+#+TITLE: ORG MODE introduction (BIBS)!!!!
+#+DATE:
+#+AUTHOR: Vaitea OPUU
+#+LANGUAGE: fr
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./images/org.css" />
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LATEX_HEADER: \usepackage[french, onelanguage, boxed, linesnumbered]{algorithm2e}
+#+LATEX_HEADER: \usepackage{graphicx}
+
+#+BEGIN_EXPORT latex
+\SetKwProg{Pro}{Procédure}{}{}
+\SetKwProg{Fn}{Function}{}{}
+\newcommand{\Protein}{\KwSty{Protein}}
+\newcommand{\Residu}{\KwSty{Residu}}
+\newcommand{\Real}{\KwSty{Real}}
+\newcommand{\Entier}{\KwSty{Entier}}
+\SetKwFunction{simulation}{simulation}%
+\SetKwFunction{gillespie}{gillespie}%
+\SetKwFunction{sampling}{sampling}%
+\SetKwFunction{rapproche}{rapproche}%
+\SetKwFunction{score}{score}%
+\SetKwFunction{collision}{collision}%
+\SetKwFunction{monteCarlo}{monteCarlo}%
+\SetKwFunction{mouvement}{mouvement}%
+\SetKwFunction{uniforme}{uniforme}%
+#+END_EXPORT
+
+#+BEGIN_SRC latex
+  \newpage
+#+END_SRC
+
+#+NAME: fig:org
+#+ATTR_LATEX: :heigh 5cm :width 5cm
+[[./images/iu.png]]
+
+* Latex pour les rapports
+** les formules de maths
+
+Produit des densités et somme des logarithme.
+
+#+BEGIN_SRC latex
+  \begin{equation}
+    \begin{split}
+      \mathscr{L} &= \prod_i f(x_i)\\
+      log(\mathscr{L}) &= \sum_i log(f(x_i))\\
+      X &\sim \mathcal{N}_{0,1}
+    \end{split}
+  \end{equation}
+#+END_SRC
+
+\begin{split}
+    \mathscr{L} &= \prod_i f(x_i)\\
+    log(\mathscr{L}) &= \sum_i log(f(x_i))\\
+    X &\sim \mathcal{N}_{0,1}
+\end{split}
+
+** Algorithmes
+
+#+BEGIN_SRC latex :exports both
+  \begin{algorithm}[H]
+    \Fn{gillepsie}{}{
+      \KwIn{\Protein{} Recepteur, \Protein{} Ligand, \Real{} score,  \Entier{} tau}
+      \KwOut{\Protein{} Ligand}\\
+
+      \tcp*[h]{On calcul si il existe un bon mouvement}\\
+      new-ligand, new-score $\leftarrow$ simulation(récepteur, ligand, score)\\
+
+      \uIf(\tcp*[h]{si on trouve un mouvement favorable}){new-socre < score}{
+        \Return{gillepsie(recepteur, new-ligand, new-score, tau)}
+      }
+
+      \tcp*[h]{On va diviser la distance entre les deux par \textit{tau}}\\
+      new-ligand $\leftarrow$ rapproche(ligand, tau)\\
+      new-score $\leftarrow$ score(récepteur, ligand)\\
+
+      \uElseIf(\tcp*[h]{aucun mouvement favorable}){tau < 15 et
+        collision(récepteur, ligand)}{
+        \tcp*[h]{collision renvoi false si collision entre récepteur et ligand}
+        \Return{gillepsie(récepteur, new-ligand, new-score, tau)}
+      }
+      \uElseIf(\tcp*[h]{mouvement trop grand}){tau < 15}{
+        \tcp*[h]{diminution du mouvement}\\
+        \Return{gillepsie(recepteur, new-ligand, new-score, tau+1)}\\
+      }
+      \Return{ligand}
+    }
+    \caption{Gillespie}
+  \end{algorithm}
+#+END_SRC
+
+
+* commandes R
+
+** Summary et autre calculs
+
+Sortie du script R en ~verbatim~.
+#+BEGIN_SRC R :session *R* :results raw :noeval yes
+  dat <- read.table("./data/cafe.dat", header = T)
+  summary(dat)
+#+END_SRC
+
+#+CAPTION: sortie verbatim
+#+NAME: fig:verba
+#+begin_example
+    Origine          Perte           Lumin             xa
+ Min.   :1.000   Min.   :11.87   Min.   :15.06   Min.   : 5.730
+ 1st Qu.:1.000   1st Qu.:14.72   1st Qu.:19.78   1st Qu.: 8.620
+ Median :3.000   Median :16.41   Median :23.41   Median :10.010
+ Mean   :2.974   Mean   :16.55   Mean   :24.03   Mean   : 9.963
+ 3rd Qu.:4.000   3rd Qu.:18.16   3rd Qu.:27.51   3rd Qu.:11.490
+ Max.   :7.000   Max.   :22.81   Max.   :41.15   Max.   :14.520
+       xb              xy              xgn
+ Min.   : 6.33   Min.   : 1.920   Min.   :1.660
+ 1st Qu.:12.06   1st Qu.: 2.890   1st Qu.:2.420
+ Median :16.29   Median : 3.790   Median :3.140
+ Mean   :16.76   Mean   : 4.249   Mean   :3.464
+ 3rd Qu.:20.89   3rd Qu.: 5.060   3rd Qu.:4.130
+ Max.   :30.57   Max.   :11.970   Max.   :9.120
+#+end_example
+
+#+BEGIN_SRC R :session *R* :results output :noeval yes
+  head(dat)
+#+END_SRC
+
+#+tblname: origin
+| Origine | Perte | Lumin |    xa |    xb |   xy |  xgn |
+|---------+-------+-------+-------+-------+------+------|
+|       1 | 12.24 | 29.62 | 12.41 | 23.66 | 6.08 | 4.61 |
+|       1 |  13.2 | 27.51 | 12.16 | 21.72 | 5.28 | 3.96 |
+|       1 | 13.52 | 26.54 | 12.05 | 21.03 | 4.93 | 3.74 |
+|       1 | 13.52 | 26.11 | 11.69 | 20.09 | 4.79 | 3.63 |
+|       1 | 13.68 | 25.59 | 11.67 | 19.75 | 4.61 | 3.54 |
+|       1 | 13.81 |    25 | 11.38 | 19.11 | 4.41 | 3.36 |
+
+
+** Figure sous R
+
+*** Histogramme sur le tableau ~origin~
+
+On peut prendre en entrée pour un script ~R~, un tableau dans le fichier ~org~.
+C'est pas un peu cool ça ?!
+#+BEGIN_SRC R :session *R* :var origin=origin :results graphics :file images/hist.png :width 400 :height 300 :noeval yes
+hist(origin$Lumin, main = "histogramme Lumin", xlab = "lumin")
+#+END_SRC
+
+#+CAPTION: hist
+#+NAME: fig:hist
+#+ATTR_LATEX: :width 8cm :heigh 6cm
+[[file:images/hist.png]]
+
+
+*** Plot normale
+
+Et evidement que l'on peut faire communiquer les blocs de codes entre eux. Pas
+besoin de déclarer plusieurs fois le tableau ~dat~.
+#+BEGIN_SRC R :session *R* :results graphics :file images/plot.png :width 400 :height 300 :noeval yes
+  plot(dat$Lumin, dat$Perte, main = "lumin vs perte", xlab = "lumin", ylab = "perte")
+  lines(lowess(dat$Perte ~ dat$Lumin), col = "red", lwd = 2, xlim = c(0, 50))
+#+END_SRC
+
+#+CAPTION: plot
+#+NAME: fig:plot
+#+ATTR_LATEX: :width 8cm :heigh 6cm
+[[file:images/plot.png]]
+
+
+*** Autres graphiques
+
+#+BEGIN_SRC R :session *R* :results graphics :file images/hist2.png :width 400 :height 300 :noeval yes
+  hist(dat$Perte, prob = T, main = "lumin", xlab = "lumin", ylab = "frequency")
+  lines(density(dat$Perte), col = "red", lwd = 2, xlim = c(0, 50))
+#+END_SRC
+
+#+CAPTION: hist2
+#+NAME: fig:hist2
+#+ATTR_LATEX: :width 8cm :heigh 6cm
+[[file:images/hist2.png]]
+
+#+BEGIN_SRC R :session *R* :results graphics :file images/heat.png :width 400 :height 300 :noeval yes
+  heatmap(cov(dat))
+#+END_SRC
+
+#+CAPTION: heatmap
+#+NAME: fig:heat
+#+ATTR_LATEX: :width 8cm :heigh 6cm
+[[file:images/heat.png]]
+
+* Commandes sql
+
+Petit /exemple/ de _requête_ sql sur une base de données en ~local~. Il suffit
+de lui fournir les informations suivantes:
+#+BEGIN_EXAMPLE
+#+name: test_request
+#+header: :engine postgresql
+#+header: :dbhost localhost
+#+header: :dbuser postgres
+#+header: :dbpassword password
+#+header: :database postgres
+#+END_EXAMPLE
+#+name: test_request
+#+header: :engine postgresql
+#+header: :dbhost localhost
+#+header: :dbuser postgres
+#+header: :dbpassword password
+#+header: :database postgres
+#+begin_src sql
+  select * from projet limit 10
+#+end_src
+
+#+RESULTS: test_request
+#+tblname: test_request
+| id | project.type    | project.status |
+|----+------------------+-----------------|
+|  1 | ChIP-Sequencing  | incomplete      |
+|  2 | Chloroplast      | Permanent Draft |
+|  3 | Chloroplast      | incomplete      |
+|  4 | Exome            | incomplete      |
+|  5 | Genome fragments | complete        |
+|  6 | Genome fragments | incomplete      |
+|  7 | Metagenome       | incomplete      |
+|  8 | Methylation      | incomplete      |
+|  9 | Methylation      | targeted        |
+| 10 | Mitochondria     | Permanent Draft |
+
+#+name: test_analyse
+#+header: :engine postgresql
+#+header: :dbhost localhost
+#+header: :dbuser postgres
+#+header: :dbpassword password
+#+header: :database postgres
+#+begin_src sql
+  EXPLAIN ANALYSE select * from projet limit 10
+#+end_src
+
+#+RESULTS: test_analyse
+#+tblname: analyse
+| QUERY PLAN                                                                                            |
+|-------------------------------------------------------------------------------------------------------|
+| Limit  (cost=0.00..0.41 rows=10 width=72) (actual time=0.021..0.026 rows=10 loops=1)                  |
+| ->  Seq Scan on projet  (cost=0.00..1.32 rows=32 width=72) (actual time=0.020..0.024 rows=10 loops=1) |
+| Planning time: 0.665 ms                                                                               |
+| Execution time: 0.077 ms                                                                              |
+* Schéma uml
+
+#+CAPTION: graphe uml
+#+NAME:uml
+#+begin_src plantuml :file images/uml.png :noeval yes
+Sequences "1:n"-"1:1" Taxonomy
+Sequences "1:n"-"1:1" Project
+Sequences "1:n"-"1:1" Laboratory
+
+class Sequences {
+GOLDSTAMP
+LEGACY GOLDSTAMP
+}
+
+class Taxonomy {
+id
+DOMAIN
+ORDER
+CLASS
+FAMILY
+GENUS
+SPECIES
+}
+
+class Project {
+id
+NCBI BIOPROJECT ID
+PROJECT NAME
+PROJECT TYPE
+PROJECT STATUS
+}
+
+class Laboratory {
+id
+funding
+}
+#+END_SRC
+
+#+CAPTION: schéma uml
+#+NAME: fig:uml
+#+ATTR_LATEX: :heigh 10cm :width 10cm
+[[file:images/uml.png]]
+
+* Programmation
+
+** Python
+
+#+NAME: fig:pyt
+#+ATTR_HTML: width="200"
+#+ATTR_HTML: heigth="200"
+#+ATTR_LATEX: :heigh 5cm :width 5cm
+[[./images/python-logo.png]]
+
+*** Fonction factorielle
+
+#+BEGIN_SRC python :session *Python* :preamble "# -*- coding: utf-8 -*-" :results raw
+  def factorial(n):
+      if n == 1:
+          return 1
+      else:
+          return factorial(n-1) * n
+
+  factorial(10)
+#+END_SRC
+
+#+RESULTS:
+3628800
+
+*** Autre
+
+Comme pour ~R~, les blocs de codes peuvent aussi communiquer.
+
+#+BEGIN_SRC python :session *Python* :preamble "# -*- coding: utf-8 -*-" :results raw
+  def affiche(n):
+      gen = (i for i in range(factorial(n)))
+      return [i for i in gen]
+
+  affiche(3)
+#+END_SRC
+
+#+RESULTS:
+[0, 1, 2, 3, 4, 5]
+
+
+#+BEGIN_SRC python :session *Python* :preamble "# -*- coding: utf-8 -*-" :results org :var origin=origin
+  def affiche_table(table):
+      result = np.
+      for t in table:
+          result.append(t)
+      return result
+
+  map(lambda x: round(4+x), affiche_table(origin)[0])
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC org
+[5.0, 16.0, 34.0, 16.0, 28.0, 10.0, 9.0]
+#+END_SRC
+
+** Haskell
+
+#+NAME: fig:has
+#+ATTR_HTML: width="200"
+#+ATTR_HTML: heigth="200"
+#+ATTR_LATEX: :heigh 5cm :width 5cm
+[[./images/haskell.png]]
+
+#+BEGIN_SRC haskell :session *haskell1* :results raw
+main :: IO ()
+main = do
+    fibo 10
+
+fibos = 0 : 1 : [ (+) x y | (x, y) <- (zip fibos (tail fibos))]
+fibo n = fibos !! n
+#+END_SRC
+
+#+RESULTS:
+55
+
+** C
+
+#+BEGIN_SRC C
+  int main(int argc, char *argv[]) {
+    int N = 10;
+    int i;
+    for (i = 0; i < N; i++) {
+      printf("hello %d\n", i);
+    }
+    return 0;
+  }
+#+END_SRC
+
+#+tblname: Ctest
+| hello | 0 |
+| hello | 1 |
+| hello | 2 |
+| hello | 3 |
+| hello | 4 |
+| hello | 5 |
+| hello | 6 |
+| hello | 7 |
+| hello | 8 |
+| hello | 9 |
+** Java
+
+#+HEADERS: :classname Hello :cmdline "-cp ."
+#+BEGIN_SRC java :var taille=10
+  public class Hello {
+      public int[][] pascal(int n) {
+          int[][] score = new int[n][n];
+          int p;
+          for (int i = 1; i < n; i++) {
+              score[i][0] = 1;
+              for (int j = 1; j < i; j++) {
+                  score[i][j] = score[i-1][j-1] + score[i-1][j];
+              }
+          }
+          return(score);
+      }
+
+      public void affiche(int[][] mat, int N) {
+          for (int i = 0; i < N; i++) {
+              for(int j = 0; j < N; j++) {
+                  System.out.print(mat[i][j]+"|");
+              }
+              System.out.println("");
+          }
+      }
+      public static void main(String[] args) {
+          Hello c = new Hello();
+          int[][] p = c.pascal(taille);
+          c.affiche(p, taille);
+      }
+  }
+#+END_SRC
+
+#+RESULTS:
+#+tblname: pascal
+| 0 | 0 |  0 |  0 |  0 |  0 |  0 | 0 | 0 | 0 |
+| 1 | 0 |  0 |  0 |  0 |  0 |  0 | 0 | 0 | 0 |
+| 1 | 1 |  0 |  0 |  0 |  0 |  0 | 0 | 0 | 0 |
+| 1 | 2 |  1 |  0 |  0 |  0 |  0 | 0 | 0 | 0 |
+| 1 | 3 |  3 |  1 |  0 |  0 |  0 | 0 | 0 | 0 |
+| 1 | 4 |  6 |  4 |  1 |  0 |  0 | 0 | 0 | 0 |
+| 1 | 5 | 10 | 10 |  5 |  1 |  0 | 0 | 0 | 0 |
+| 1 | 6 | 15 | 20 | 15 |  6 |  1 | 0 | 0 | 0 |
+| 1 | 7 | 21 | 35 | 35 | 21 |  7 | 1 | 0 | 0 |
+| 1 | 8 | 28 | 56 | 70 | 56 | 28 | 8 | 1 | 0 |
+
+** Shell
+
+#+BEGIN_SRC sh
+  ls -lah .
+#+END_SRC
+
+#+RESULTS:
+#+tblname: ls_results
+| total      | 56 |            |       |      |    |     |       |             |
+| drwxr-xr-x | 10 | vaiteaopuu | staff | 340B | 29 | jan | 11:20 | 0           |
+| drwxr-xr-x |  7 | vaiteaopuu | staff | 238B | 28 | jan | 15:28 | ..          |
+| -rw-r--r-- |  1 | vaiteaopuu | staff | 1,0K | 29 | jan | 10:17 | Hello.class |
+| -rw-r--r-- |  1 | vaiteaopuu | staff | 727B | 29 | jan | 10:18 | Hello.java  |
+| drwxr-xr-x |  3 | vaiteaopuu | staff | 102B | 28 | jan | 17:36 | auto        |
+| drwxr-xr-x |  3 | vaiteaopuu | staff | 102B | 29 | jan | 09:34 | css         |
+| drwxr-xr-x |  3 | vaiteaopuu | staff | 102B | 28 | jan | 16:23 | data        |
+| drwxr-xr-x | 16 | vaiteaopuu | staff | 544B | 29 | jan | 11:11 | images      |
+| -rw-r--r-- |  1 | vaiteaopuu | staff | 13K  | 29 | jan | 11:20 | rapport.org |
+| -rw-r--r-- |  1 | vaiteaopuu | staff | 474B | 29 | jan | 10:53 | test.hs     |
+
+#+begin_src sh :results verbatim
+  cowsay ORG IS GREAT
+#+end_src
+
+#+CAPTION: cow
+#+NAME: fig:cow
+#+BEGIN_EXAMPLE
+ ______________
+< ORG IS GREAT >
+ --------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+#+END_EXAMPLE
+
+#+begin_src sh :results verbatim :noeval yes
+  cowsay "$(python ../markov/markov.py ../song2 3 2)"
+#+end_src
+
+#+CAPTION: markow
+#+NAME: fig:markow
+#+begin_example
+ ________________________________________
+/ l'amour sera loi                       \
+|                                        |
+| ni facile, fais moi bête comme m'a    |
+| convoitisé                            |
+|                                        |
+| les feuilles                           |
+|                                        |
+| qu'à : "Méfie toi de ton de l'air du |
+| poêle                                 |
+|                                        |
+| façon connu                           |
+|                                        |
+\ ne mangions qu'un jour                 /
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+#+end_example
+
+** Et pas mal d'autre langages ...
+| Language       | Identifier |
+|----------------+------------|
+| Asymptote      | asymptote  |
+| C              | C          |
+| Clojure        | clojure    |
+| D              | d          |
+| Graphviz       | dot        |
+| Emacs Lisp     | emacs-lisp |
+| gnuplot        | gnuplot    |
+| Java           | java       |
+| LaTeX          | latex      |
+| Lisp           | lisp       |
+| Lua            | lua        |
+| Mscgen         | mscgen     |
+| Octave         | octave     |
+| Oz             | oz         |
+| Plantuml       | plantuml   |
+| Python         | python     |
+| Ruby           | ruby       |
+| Scheme         | scheme     |
+| Sed            | sed        |
+| SQL            | sql        |
+| Awk            | awk        |
+| C++            | C++        |
+| CSS            | css        |
+| ditaa          | ditaa      |
+| Emacs Calc     | calc       |
+| Fortran        | fortran    |
+| Haskell        | haskell    |
+| Javascript     | js         |
+| Ledger         | ledger     |
+| Lilypond       | lilypond   |
+| MATLAB         | matlab     |
+| Objective Caml | ocaml      |
+| Org mode       | org        |
+| Perl           | perl       |
+| Processing.js  | processing |
+| R              | R          |
+| Sass           | sass       |
+| GNU Screen     | screen     |
+| shell          | sh         |
+| SQLite         | sqlite     |
+\\
+
+
+[[http://spacemacs.org][ile:https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg]]
