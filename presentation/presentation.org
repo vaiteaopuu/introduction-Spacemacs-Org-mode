@@ -1,0 +1,107 @@
+#+STARTUP: overview
+#+REVEAL_THEME: black
+#+OPTIONS: num:nil
+#+OPTIONS: reveal_title_slide:nil
+#+OPTIONS: toc:nil
+#+OPTIONS: reveal_overview:true
+#+REVEAL_PLUGINS: (highlight)
+#+LANGUAGE: fr
+
+* Introduction à Emacs
+Vaitea OPUU
+
+* Motivations pour la Bioinfo
+:PROPERTIES:
+:reveal_data_state: soothe
+:END:
+#+ATTR_REVEAL: :frag (appear)
+- Édition de programmes (R, C, Python, Java, PHP, ...)
+- Rédaction de rapports
+- Lignes de commandes
+- Présentations
+- ...
+
+* En gros
+
+#+ATTR_REVEAL: :frag (roll-in)
+- On lit du texte
+- On écrit du texte
+- Ça risque de devenir votre boulot
+#+HTML: <img src="./images/iu.jpg" height="200px" width="200px">
+
+#+BEGIN_NOTES
+test de notes
+#+END_NOTES
+* Choix de l'éditeur
+:PROPERTIES:
+:reveal_background: ./images/emacs.jpg
+:END:
+
+#+ATTR_REVEAL: :frag (roll-in)
+- Emacs 1976
+- Vim
+- ...
+** Pourquoi Vim ou Emacs ?
+
+#+ATTR_REVEAL: :frag (roll-in)
+- performances
+- updates réguliers
+- portable (linux, mac, windows ...)
+- open source
+- longévité
+
+* Questions ?
+
+#+ATTR_REVEAL: :frag (roll-in)
+- C'est quoi ?
+- C'est long à apprendre ?
+- À quoi ça peut servir ?
+* Spacemacs
+
+#+HTML: <img src="./images/spacemacs.png" height="200px" width="200px">
+Vim & Emacs du =prêt à l'emploi=
+
+** Buffers
+
+#+HTML: <img src="./images/emacs-scrshot-00.png" height="400px" width="400px">
+
+** Déplacments et raccourcis
+
+#+HTML: <img src="./images/mouse.jpg" height="400px" width="400px">
+
+** Les macros
+** Snippets
+
+** Écrire du code avec ça
+
+#+BEGIN_SRC c
+  int main(int argc, char *argv[])
+  {
+    printf("Hello world !!!");
+    return 0;
+  }
+#+END_SRC
+
+** Interaction avec le shell
+
+Toujours dans Emacs
+* ORG MODE
+:PROPERTIES:
+:reveal_background: ./images/giphy.gif
+:reveal_background_trans: zoom
+:END:
+
+#+ATTR_REVEAL: :frag (roll-in)
+- Prise de notes
+- Agenda
+- TODO list
+- lateX
+- Exécution de code
+- ...
+
+* En gros tout...
+
+* Merci à tous !!!
+Et au BDE :) \\
+[[http://spacemacs.org][file:https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg]]
+#+HTML: <img src="./images/logo.png" height="200px" width="200px">

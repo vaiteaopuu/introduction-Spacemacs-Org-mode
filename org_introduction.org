@@ -1,8 +1,10 @@
 #+TITLE: ORG MODE introduction (BIBS)!!!!
+#+STARTUP: overview
 #+DATE:
 #+AUTHOR: Vaitea OPUU
 #+LANGUAGE: fr
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./images/org.css" />
+# #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./images/org.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./images/readorg.css" />
 #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
 #+LATEX_HEADER: \usepackage[french, onelanguage, boxed, linesnumbered]{algorithm2e}
 #+LATEX_HEADER: \usepackage{graphicx}
@@ -88,8 +90,7 @@ Produit des densités et somme des logarithme.
   \end{algorithm}
 #+END_SRC
 
-
-* commandes R
+* Commandes R
 
 ** Summary et autre calculs
 
@@ -282,7 +283,6 @@ funding
 #+NAME: fig:uml
 #+ATTR_LATEX: :heigh 10cm :width 10cm
 [[file:images/uml.png]]
-
 * Programmation
 
 ** Python
@@ -542,3 +542,7 @@ fibo n = fibos !! n
 
 
 [[http://spacemacs.org][ile:https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg]]
+
+* CSS origine
+
+[[http://spacemacs.org/doc/DOCUMENTATION.html][site d'origine du CSS]]
