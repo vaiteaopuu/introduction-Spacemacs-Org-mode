@@ -65,7 +65,7 @@ Vim & Emacs du =prêt à l'emploi=
 
 #+HTML: <img src="./images/emacs-scrshot-00.png" height="400px" width="400px">
 
-** Déplacments et raccourcis
+** Déplacements et raccourcis
 
 #+HTML: <img src="./images/mouse.jpg" height="400px" width="400px">
 
@@ -96,7 +96,7 @@ Toujours dans Emacs
 - Agenda
 - TODO list
 - lateX
-- Exécution de code
+- Exécution de codes
 - ...
 
 * En gros tout...

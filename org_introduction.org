@@ -38,7 +38,14 @@
 * Latex pour les rapports
 ** les formules de maths
 
-Produit des densités et somme des logarithme.
+Aliquam erat volutpat. Nunc eleifend leo vitae magna. In id erat non orci
+commodo lobortis. Proin neque massa, cursus ut, gravida ut, lobortis eget,
+lacus. Sed diam. Praesent fermentum tempor tellus. Nullam tempus. Mauris ac
+felis vel velit tristique imperdiet. Donec at pede. Etiam vel neque nec dui
+dignissim bibendum. Vivamus id enim. Phasellus neque orci, porta a, aliquet
+quis, semper a, massa. Phasellus purus. Pellentesque tristique imperdiet tortor.
+Nam euismod tellus id erat.
+
 
 #+BEGIN_SRC latex
   \begin{equation}
@@ -57,6 +64,18 @@ Produit des densités et somme des logarithme.
 \end{split}
 
 ** Algorithmes
+
+Pellentesque dapibus suscipit ligula. Donec posuere augue in quam. Etiam vel
+tortor sodales tellus ultricies commodo. Suspendisse potenti. Aenean in sem ac
+leo mollis blandit. Donec neque quam, dignissim in, mollis nec, sagittis eu,
+wisi. Phasellus lacus. Etiam laoreet quam sed arcu. Phasellus at dui in ligula
+mollis ultricies. Integer placerat tristique nisl. Praesent augue. Fusce
+commodo. Vestibulum convallis, lorem a tempus semper, dui dui euismod elit,
+vitae placerat urna tortor vitae lacus. Nullam libero mauris, consequat quis,
+varius et, dictum id, arcu. Mauris mollis tincidunt felis. Aliquam feugiat
+tellus ut neque. Nulla facilisis, risus a rhoncus fermentum, tellus tellus
+lacinia purus, et dictum nunc justo sit amet elit.
+
 
 #+BEGIN_SRC latex :exports both
   \begin{algorithm}[H]
@@ -92,7 +111,7 @@ Produit des densités et somme des logarithme.
 
 * Commandes R
 
-** Summary et autre calculs
+** Summary et autres calculs
 
 Sortie du script R en ~verbatim~.
 #+BEGIN_SRC R :session *R* :results raw :noeval yes
@@ -134,7 +153,7 @@ Sortie du script R en ~verbatim~.
 |       1 | 13.81 |    25 | 11.38 | 19.11 | 4.41 | 3.36 |
 
 
-** Figure sous R
+** Figures sous R
 
 *** Histogramme sur le tableau ~origin~
 
@@ -150,10 +169,10 @@ hist(origin$Lumin, main = "histogramme Lumin", xlab = "lumin")
 [[file:images/hist.png]]
 
 
-*** Plot normale
+*** Plot normal
 
-Et evidement que l'on peut faire communiquer les blocs de codes entre eux. Pas
-besoin de déclarer plusieurs fois le tableau ~dat~.
+On peut faire communiquer les blocs de codes entre eux. Pas besoin de déclarer
+plusieurs fois le tableau ~dat~.
 #+BEGIN_SRC R :session *R* :results graphics :file images/plot.png :width 400 :height 300 :noeval yes
   plot(dat$Lumin, dat$Perte, main = "lumin vs perte", xlab = "lumin", ylab = "perte")
   lines(lowess(dat$Perte ~ dat$Lumin), col = "red", lwd = 2, xlim = c(0, 50))
@@ -308,7 +327,7 @@ funding
 #+RESULTS:
 3628800
 
-*** Autre
+*** Autres
 
 Comme pour ~R~, les blocs de codes peuvent aussi communiquer.
 
@@ -495,7 +514,7 @@ fibo n = fibos !! n
                 ||     ||
 #+end_example
 
-** Et pas mal d'autre langages ...
+** Et pas mal d'autres langages ...
 | Language       | Identifier |
 |----------------+------------|
 | Asymptote      | asymptote  |
