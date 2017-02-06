@@ -6,6 +6,7 @@
 #+OPTIONS: reveal_overview:true
 #+REVEAL_PLUGINS: (highlight)
 #+LANGUAGE: fr
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
 
 * Introduction à Emacs
 Vaitea OPUU
