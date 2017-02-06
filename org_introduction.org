@@ -36,6 +36,7 @@
 [[./images/iu.png]]
 
 * Latex pour les rapports
+
 ** les formules de maths
 
 Aliquam erat volutpat. Nunc eleifend leo vitae magna. In id erat non orci
@@ -45,6 +46,17 @@ felis vel velit tristique imperdiet. Donec at pede. Etiam vel neque nec dui
 dignissim bibendum. Vivamus id enim. Phasellus neque orci, porta a, aliquet
 quis, semper a, massa. Phasellus purus. Pellentesque tristique imperdiet tortor.
 Nam euismod tellus id erat.
+
+/Pellentesque/ dapibus _suscipit_ *ligula*. ~Donec~ posuere augue in quam. Etiam vel
+tortor sodales tellus ultricies commodo. Suspendisse potenti. Aenean in sem ac
+leo mollis blandit. Donec neque quam, dignissim in, mollis nec, sagittis eu,
+wisi. Phasellus lacus. Etiam laoreet quam sed arcu. Phasellus at dui in ligula
+mollis ultricies. Integer placerat tristique nisl. Praesent augue. Fusce
+commodo. Vestibulum convallis, lorem a tempus semper, dui dui euismod elit,
+vitae placerat urna tortor vitae lacus. Nullam libero mauris, consequat quis,
+varius et, dictum id, arcu. Mauris mollis tincidunt felis. Aliquam feugiat
+tellus ut neque. Nulla facilisis, risus a rhoncus fermentum, tellus tellus
+lacinia purus, et dictum nunc justo sit amet elit.
 
 
 #+BEGIN_SRC latex
@@ -111,6 +123,7 @@ lacinia purus, et dictum nunc justo sit amet elit.
 
 * Commandes R
 
+
 ** Summary et autres calculs
 
 Sortie du script R en ~verbatim~.
@@ -143,14 +156,14 @@ Sortie du script R en ~verbatim~.
 #+END_SRC
 
 #+tblname: origin
-| Origine | Perte | Lumin |    xa |    xb |   xy |  xgn |
-|---------+-------+-------+-------+-------+------+------|
-|       1 | 12.24 | 29.62 | 12.41 | 23.66 | 6.08 | 4.61 |
-|       1 |  13.2 | 27.51 | 12.16 | 21.72 | 5.28 | 3.96 |
-|       1 | 13.52 | 26.54 | 12.05 | 21.03 | 4.93 | 3.74 |
-|       1 | 13.52 | 26.11 | 11.69 | 20.09 | 4.79 | 3.63 |
-|       1 | 13.68 | 25.59 | 11.67 | 19.75 | 4.61 | 3.54 |
-|       1 | 13.81 |    25 | 11.38 | 19.11 | 4.41 | 3.36 |
+| Origine | Perte | Lumin |    xa |    xb |    xy |  xgn |      |
+|---------+-------+-------+-------+-------+-------+------+------|
+|       1 |     1 | 12.24 | 29.62 | 12.41 | 23.66 | 6.08 | 4.61 |
+|       2 |     1 | 13.20 | 27.51 | 12.16 | 21.72 | 5.28 | 3.96 |
+|       3 |     1 | 13.52 | 26.54 | 12.05 | 21.03 | 4.93 | 3.74 |
+|       4 |     1 | 13.52 | 26.11 | 11.69 | 20.09 | 4.79 | 3.63 |
+|       5 |     1 | 13.68 | 25.59 | 11.67 | 19.75 | 4.61 | 3.54 |
+|       6 |     1 | 13.81 | 25.00 | 11.38 | 19.11 | 4.41 | 3.36 |
 
 
 ** Figures sous R
@@ -159,7 +172,7 @@ Sortie du script R en ~verbatim~.
 
 On peut prendre en entrée pour un script ~R~, un tableau dans le fichier ~org~.
 C'est pas un peu cool ça ?!
-#+BEGIN_SRC R :session *R* :var origin=origin :results graphics :file images/hist.png :width 400 :height 300 :noeval yes
+#+BEGIN_SRC R :session *R* :var origin=origin :results graphics :file images/hist.png :width 400 :height 300
 hist(origin$Lumin, main = "histogramme Lumin", xlab = "lumin")
 #+END_SRC
 
@@ -167,7 +180,6 @@ hist(origin$Lumin, main = "histogramme Lumin", xlab = "lumin")
 #+NAME: fig:hist
 #+ATTR_LATEX: :width 8cm :heigh 6cm
 [[file:images/hist.png]]
-
 
 *** Plot normal
 
@@ -229,7 +241,7 @@ de lui fournir les informations suivantes:
 
 #+RESULTS: test_request
 #+tblname: test_request
-| id | project.type    | project.status |
+| id | project.type     | project.status  |
 |----+------------------+-----------------|
 |  1 | ChIP-Sequencing  | incomplete      |
 |  2 | Chloroplast      | Permanent Draft |
@@ -391,6 +403,18 @@ fibo n = fibos !! n
   }
 #+END_SRC
 
+#+RESULTS:
+| hello | 0 |
+| hello | 1 |
+| hello | 2 |
+| hello | 3 |
+| hello | 4 |
+| hello | 5 |
+| hello | 6 |
+| hello | 7 |
+| hello | 8 |
+| hello | 9 |
+
 #+tblname: Ctest
 | hello | 0 |
 | hello | 1 |
@@ -434,8 +458,6 @@ fibo n = fibos !! n
       }
   }
 #+END_SRC
-
-#+RESULTS:
 #+tblname: pascal
 | 0 | 0 |  0 |  0 |  0 |  0 |  0 | 0 | 0 | 0 |
 | 1 | 0 |  0 |  0 |  0 |  0 |  0 | 0 | 0 | 0 |
@@ -515,6 +537,7 @@ fibo n = fibos !! n
 #+end_example
 
 ** Et pas mal d'autres langages ...
+
 | Language       | Identifier |
 |----------------+------------|
 | Asymptote      | asymptote  |
