@@ -6,6 +6,13 @@
 
 ** Org mode presentation
 
+[[http://orgmode.org]]
+
 #+CAPTION: ORG
 #+NAME: fig:org
 [[./images/iu.png]]
+
+** GNU site
+
+Le logiciel libre !!!!
+[[https://www.gnu.org]]
