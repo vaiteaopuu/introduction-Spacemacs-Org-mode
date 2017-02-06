@@ -588,3 +588,4 @@ fibo n = fibos !! n
 * CSS origine
 
 [[http://spacemacs.org/doc/DOCUMENTATION.html][site d'origine du CSS]]
+ by Sylvain Benner

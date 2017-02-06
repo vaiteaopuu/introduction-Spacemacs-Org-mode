@@ -106,3 +106,6 @@ Toujours dans Emacs
 Et au BDE :) \\
 [[http://spacemacs.org][file:https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg]]
 #+HTML: <img src="./images/logo.png" height="200px" width="200px">
+
+sur github: vaiteaopuu
+[[https://github.com/vaiteaopuu/introduction-Spacemacs-Org-mode]]
