@@ -6,7 +6,7 @@
 #+OPTIONS: reveal_overview:true
 #+REVEAL_PLUGINS: (highlight)
 #+LANGUAGE: fr
-#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_ROOT: file:///Users/vaiteaopuu/Documents/Cours2/emacs/markov/org/presentation/reveal.js-3.4.1/
 
 * Introduction à Emacs
 Vaitea OPUU
